@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Grupo_2013" data-name="Grupo 2013" transform="translate(-300.692 -2807.222)">
+    <path id="Trazado_192" data-name="Trazado 192" d="M25,0A25,25,0,1,1,0,25,25,25,0,0,1,25,0Z" transform="translate(300.692 2807.222)" fill="#bbdfdc"/>
+    <g id="Grupo_54" data-name="Grupo 54" transform="translate(312.252 2819.376)">
+      <path id="Trazado_190" data-name="Trazado 190" d="M213.115,2839.232V2821.9h-5.763v17.333Zm-2.883-19.7a3.21,3.21,0,1,0-.037,0Z" transform="translate(-207.011 -2813.542)" fill="#1d4a60" fill-rule="evenodd"/>
+      <path id="Trazado_191" data-name="Trazado 191" d="M211.843,2835.416H217.6v-9.681a3.887,3.887,0,0,1,.19-1.4,3.155,3.155,0,0,1,2.956-2.111c2.087,0,2.919,1.59,2.919,3.921v9.272h5.762v-9.938c0-5.325-2.842-7.8-6.635-7.8a5.737,5.737,0,0,0-5.231,2.921h.038v-2.514h-5.762c.075,1.623,0,17.333,0,17.333Z" transform="translate(-202.551 -2809.726)" fill="#1d4a60" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,5 @@
+@for $w from 1 through 20 {
+    .w_#{$w * 5} {
+        width: #{$w * 5%};
+    }
+}

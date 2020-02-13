@@ -1,0 +1,53 @@
+#barMenu {
+    min-height: 100px;
+    background-color: rgba($darkgreen, 0.4);
+    box-shadow: $shadow;
+    padding: 0;
+    transition: .2s ease;
+    .navbar-toggler {
+        height: 100px;
+        color: $white;
+        font-weight: 900;
+    }
+    #alxLogo {
+        width: 50px;
+        margin-left: 1rem;
+    }
+    #mainMenu {
+        text-align: center;
+        background-color: $darkgreen;
+        @media (min-width:992px) {
+            background-color: transparent;
+        }
+        ul {
+            li {
+                position: relative;
+                @media (min-width: 992px) {
+                    margin: 0 3rem;
+                }
+                a {
+                    &.nav-link {color: $white;}
+                    &.active {color: $light;}
+                    &.disabled {color: $green;}
+                }
+                &:hover {
+                    background-color: $light;
+                    &:before {
+                        @media (min-width:992px){
+                          content: '';
+                          position: absolute;  
+                          background-color: $light;
+                          z-index: -1;
+                          height: 100px;
+                          width: 200%;
+                          transform: translate(-50%, -30%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

@@ -1,0 +1,88 @@
+@mixin logoWidth($width) {
+    width: $width;
+    @media (min-width: 768px){
+        width: $width * 1.2;
+    }
+    @media (min-width: 992px) and (min-device-width:1024px) and (orientation:landscape){
+        width: $width * 1.4;
+    }
+    @media (min-width: 1280px){
+        width: $width * 1.6;
+    }
+    @media (min-width: 1920px){
+        width: $width * 1.8;
+    }
+    @media (min-width: 2560px){
+        width: $width * 2;
+    }
+    @media (min-width: 3840px){
+        width: $width * 2.5;
+    }
+    @media (min-width: 4096px){
+        width: $width * 3;
+    }
+}
+@mixin backgoundImage($property) {
+    transition: linear;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../assets/" + $property + "@mobile.jpg");
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg + 90deg, rgba(61,179,154,1) 0%, rgba(29,74,96,1) 100%);
+        opacity: .65;
+        z-index: 1;
+        top:0;
+    }
+    @media (min-width: 768px){
+        background-image: url("../assets/" + $property + ".jpg");
+    }
+    @media (min-device-width:1024px) and (orientation:landscape){
+        background-image: url("../assets/" + $property + "@tablet.jpg");
+    }
+    @media (min-width: 1280px){
+        background-image: url("../assets/" + $property + "@laptop.jpg");
+    }
+    @media (min-width: 1920px){
+        background-image: url("../assets/" + $property + "@2x.jpg");
+    }
+    @media (min-width: 2560px){
+        background-image: url("../assets/" + $property + "@3x.jpg");
+    }
+    @media (min-width: 3840px){
+        background-image: url("../assets/" + $property + "@4x.jpg");
+    }
+    @media (min-width: 4096px){
+        background-image: url("../assets/" + $property + "@5x.jpg");
+    }
+}
+@mixin spaceWhite($font) {
+    font-size: $font;
+    margin: 0;
+    @media (min-width: 768px){
+        font-size: $font * 1.2461538461538463;
+    }
+    @media (min-width: 992px) and (min-device-width:1024px) and (orientation:landscape){
+        font-size: $font * 1.4461538461538463;
+    }
+    @media (min-width: 1280px){
+        font-size: $font * 1.6461538461538463;
+    }
+    @media (min-width: 1920px){
+        font-size: $font * 1.8461538461538463;
+    }
+    @media (min-width: 2560px){
+        font-size: $font * 2;
+    }
+    @media (min-width: 3840px){
+        font-size: $font * 2.2461538461538463;
+    }
+    @media (min-width: 4096px){
+        font-size: $font * 2.6461538461538463;
+    }
+}

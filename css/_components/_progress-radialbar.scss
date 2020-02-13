@@ -1,0 +1,133 @@
+.wheel-container {
+    position: relative;
+}
+$radial-size: 180px;
+$radial-border-size:(10 * $radial-size) / 100;
+$radial-color: #417188;
+$radial-background: #bbdfdc;
+$radial-overlay-size: $radial-size - ($radial-border-size * 2);
+$radial-overlay-background: $green;
+$radial-animation-time: 1.5s;
+$radial-animation-time-0: 2.15s;
+$radial-zindex-overlay: 20;
+$radial-zindex-circle: 10;
+.wheel {
+    position: relative;
+}
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: $radial-size;
+    height: $radial-size;
+    border-radius: 100%;
+    float: left;
+    background: $radial-background;
+    z-index: -1;
+    .circle-wrapper {
+        position: absolute;
+        width: $radial-size;
+        height: $radial-size;
+        clip: rect(0, $radial-size, $radial-size, ($radial-size / 2));
+    }
+}
+.circle {
+    width: $radial-size ;
+    height: $radial-size ;
+    border: $radial-border-size solid $radial-color;
+    border-radius: 50%;
+    position: absolute;
+    clip: rect(0, ($radial-size / 2), $radial-size, 0);
+    z-index: $radial-zindex-circle;
+    backface-visibility: hidden;
+}
+[data-anim~=base] {
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+[data-anim~=wrapper] {
+    animation-duration: 0.01s;
+    animation-name: close-wrapper;
+    animation-timing-function: ease-out;
+}
+@for $deg from 0 through 8 {
+    @keyframes deg#{$deg * 45} {
+        from    {transform: rotate(0deg);}
+        to      {transform: rotate(($deg * 45) + deg);}
+    }
+}
+.value {
+	&0 {
+		[data-anim~=wrapper] { animation: none; }
+		.circle {
+			&[data-anim~=left] { animation-name: deg0; animation-duration: $radial-animation-time; } // Half Animation time
+			&[data-anim~=right] { animation-name: deg0; animation-duration: $radial-animation-time; } // Half Animation time
+		}
+    }
+	&15 {
+		[data-anim~=wrapper] { animation: none; }
+		.circle {
+			&[data-anim~=left] { animation-name: deg45; animation-duration: $radial-animation-time; } // Half Animation time
+			&[data-anim~=right] { animation-name: deg45; animation-duration: $radial-animation-time; } // Half Animation time
+		}
+    }
+    &25 {
+		[data-anim~=wrapper] { animation: none; }
+		.circle {
+			&[data-anim~=left] { animation-name: deg90; animation-duration: $radial-animation-time; } // Half Animation time
+			&[data-anim~=right] { animation-name: deg90; animation-duration: $radial-animation-time; } // Half Animation time
+		}
+    }
+    &35 {
+		[data-anim~=wrapper] { animation: none; }
+		.circle {
+			&[data-anim~=left] { animation-name: deg135; animation-duration: $radial-animation-time; } // Half Animation time
+			&[data-anim~=right] { animation-name: deg135; animation-duration: $radial-animation-time; } // Half Animation time
+		}
+    }
+    &50 {
+		[data-anim~=wrapper] { animation: none; }
+		.circle {
+			&[data-anim~=left] { animation-name: deg180; animation-duration: $radial-animation-time; } // Half Animation time
+			&[data-anim~=right] { animation-name: deg180; animation-duration: $radial-animation-time; } // Half Animation time
+		}
+    }
+    &65 {
+		[data-anim~=wrapper] { animation-delay: $radial-animation-time-0; }
+		.circle {
+			&[data-anim~=left] { animation-name: deg180; animation-duration: $radial-animation-time; } // Half Animation time
+			&[data-anim~=right] { animation-name: deg225; animation-duration: ($radial-animation-time * 1.25); } // Half Animation time
+		}
+	}
+	&75 {
+		[data-anim~=wrapper] { animation-delay: $radial-animation-time-0; }
+		.circle {
+			&[data-anim~=left] { animation-name: deg180; animation-duration: $radial-animation-time; } // Half Animation time
+			&[data-anim~=right] { animation-name: deg270; animation-duration: ($radial-animation-time * 1.5); } // Half Animation time
+		}
+    }
+    &85 {
+		[data-anim~=wrapper] { animation-delay: $radial-animation-time-0; }
+		.circle {
+			&[data-anim~=left] { animation-name: deg180; animation-duration: $radial-animation-time; } // Half Animation time
+			&[data-anim~=right] { animation-name: deg315; animation-duration: ($radial-animation-time * 1.75); } // Half Animation time
+		}
+	}
+	/* 360deg */ 
+	&100 {
+		[data-anim~=wrapper] { animation-delay: $radial-animation-time-0; }
+		.circle {
+			&[data-anim~=left] { animation-name: deg180; animation-duration: $radial-animation-time; } // Half Animation time
+			&[data-anim~=right] { animation-name: deg360; animation-duration: ($radial-animation-time * 2); } // Half Animation time
+		}
+	}
+}
+
+@keyframes close-wrapper {
+	to { clip: rect(0px, $radial-size, $radial-size, 0 ); }
+}
+@-moz-keyframes close-wrapper {
+	to { clip-path: rect(0px, $radial-size, $radial-size, 0 ); }
+}

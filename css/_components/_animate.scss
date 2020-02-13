@@ -1,0 +1,408 @@
+/*------------------------ Triggers ------------------------*/
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    backface-visibility: visible;
+    &.infinite {
+        animation-iteration-count: infinite;
+    }
+    @for $sec from 1 through 10 {
+        &.moreTime_#{$sec} {
+            animation-duration: $sec + s;
+        }
+    }
+}
+/*------------------------ Delay ------------------------*/
+@for $num from 1 through 10 {
+    .delay_#{$num} {
+        animation-delay: ($num / 1.9) + s;
+    }
+}
+/*------------------------ Keyframes ------------------------*/
+@mixin kyfrm($animation-name) {
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+@mixin animation($name) {
+    animation-name: $name;
+}
+@mixin easeIn {
+    animation-timing-function: cubic-bezier(0,0.165,0.205,0.915);
+}
+@mixin easeOut {
+    animation-timing-function: cubic-bezier(0.760, 0, 0.905, 0.545);
+}
+
+/*------------------------ Animation ------------------------*/
+/* Flash */
+@include kyfrm(flash) {
+    25%,75% {opacity: 0;}
+    from,50%,to {opacity: 1;}
+}
+.flash {
+    @include animation(flash);
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+/* Pulse */
+@include kyfrm(pulse) {
+    from,20%,to {
+        transform: scale3d(1,1,1);
+    }
+    10% {
+        transform: scale3d(1.05,1.05,1.05);
+    }
+}
+.pulse {
+    @include animation(pulse);
+    @include easeIn;
+}
+/* Bounce */
+@include kyfrm(bounce) {
+    from {
+        @include easeIn;
+        transform: scale3d(1,1,1);
+    }
+    11.2%,33.6%,56%,78.4% {
+        @include easeIn;
+        transform: scale3d(1.5,.5,1);
+    }
+    to {
+        @include easeIn;
+        transform: scale3d(1,1,1);
+    }
+    22.4% {
+        transform: scale3d(1,3,1);
+        @include easeOut;
+    }
+    44.8% {
+        transform: scale3d(1,2.5,1);
+        @include easeOut;
+    }
+    67.2% {
+        transform: scale3d(1,2,1);
+        @include easeOut;
+    }
+    89.6% {
+        transform: scale3d(1,1.5,1);
+        @include easeOut;
+    }
+}
+.bounce {
+    @include animation(bounce);
+    transform-origin: center bottom;
+}
+/* Bounce In */
+@include kyfrm(bounceIn) {
+    
+}
+.bounceIn {
+    @include animation(bounceIn);
+}
+/* Bounce In Down */
+@include kyfrm(bounceInDown) {
+    //down
+    11.2%,33.6%,56%,78.4%,to 
+    {
+        transform: translate3d(0,0,0);
+        @include easeIn;
+        opacity: 1;
+    }
+    //up
+    from {
+        transform: translate3d(0,-15rem,0);
+        @include easeOut;
+        opacity: 0;
+    }
+    22.4% {
+        transform: translate3d(0,-8rem,0);
+        @include easeOut;
+    }
+    44.8% {
+        transform: translate3d(0,-3rem,0);
+        @include easeOut;
+    }
+    67.2% {
+        transform: translate3d(0,-1rem,0);
+        @include easeOut;
+    }
+    89.6% {
+        transform: translate3d(0,-0.5rem,0);
+        @include easeOut;
+    }
+}
+.bounceInDown {
+    @include animation(bounceInDown);
+}
+/* Bounce In Up */
+@include kyfrm(bounceInUp) {
+    //up
+    11.2%,33.6%,56%,78.4%,to 
+    {
+        transform: translate3d(0,0,0);
+        @include easeIn;
+        opacity: 1;
+    }
+    //down
+    from {
+        transform: translate3d(0,15rem,0);
+        @include easeOut;
+        opacity: 0;
+    }
+    22.4% {
+        transform: translate3d(0,8rem,0);
+        @include easeOut;
+    }
+    44.8% {
+        transform: translate3d(0,3rem,0);
+        @include easeOut;
+    }
+    67.2% {
+        transform: translate3d(0,1rem,0);
+        @include easeOut;
+    }
+    89.6% {
+        transform: translate3d(0,0.5rem,0);
+        @include easeOut;
+    }
+}
+.bounceInUp {
+    @include animation(bounceInUp);
+}
+/* Bounce In Left */
+@include kyfrm(bounceInLeft) {
+    //right
+    11.2%,33.6%,56%,78.4%,to 
+    {
+        transform: translate3d(0,0,0);
+        @include easeIn;
+        opacity: 1;
+    }
+    //left
+    from {
+        transform: translate3d(-15rem,0,0);
+        @include easeOut;
+        opacity: 0;
+    }
+    22.4% {
+        transform: translate3d(-8rem,0,0);
+        @include easeOut;
+    }
+    44.8% {
+        transform: translate3d(-3rem,0,0);
+        @include easeOut;
+    }
+    67.2% {
+        transform: translate3d(-1rem,0,0);
+        @include easeOut;
+    }
+    89.6% {
+        transform: translate3d(-0.5rem,0,0);
+        @include easeOut;
+    }
+}
+.bounceInLeft {
+    @include animation(bounceInLeft);
+}
+/* Bounce In Right */
+@include kyfrm(bounceInRight) {
+    //right
+    11.2%,33.6%,56%,78.4%,to 
+    {
+        transform: translate3d(0,0,0);
+        @include easeIn;
+        opacity: 1;
+    }
+    //left
+    from {
+        transform: translate3d(15rem,0,0);
+        @include easeOut;
+        opacity: 0;
+    }
+    22.4% {
+        transform: translate3d(8rem,0,0);
+        @include easeOut;
+    }
+    44.8% {
+        transform: translate3d(3rem,0,0);
+        @include easeOut;
+    }
+    67.2% {
+        transform: translate3d(1rem,0,0);
+        @include easeOut;
+    }
+    89.6% {
+        transform: translate3d(0.5rem,0,0);
+        @include easeOut;
+    }
+}
+.bounceInRight {
+    @include animation(bounceInRight);
+}
+/* Fade In */
+@include kyfrm(fadeIn) {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.fadeIn {
+    @include animation(fadeIn);
+}
+/* Fade In Down*/
+@include kyfrm(fadeInDown) {
+    from {opacity: 0;transform: translate3d(0,-15rem,0);}
+    to {opacity: 1;transform: translate3d(0,0,0);}
+}
+.fadeInDown {
+    @include animation(fadeInDown);
+}
+/* Fade In Up*/
+@include kyfrm(fadeInUp) {
+    from {opacity: 0;transform: translate3d(0,15rem,0);}
+    to {opacity: 1;transform: translate3d(0,0,0);}
+}
+.fadeInUp {
+    @include animation(fadeInUp);
+}
+/* Fade In Left*/
+@include kyfrm(fadeInLeft) {
+    from {opacity: 0;transform: translate3d(-15rem,0,0);}
+    to {opacity: 1;transform: translate3d(0,0,0);}
+}
+.fadeInLeft {
+    @include animation(fadeInLeft);
+}
+/* Fade In Right*/
+@include kyfrm(fadeInRight) {
+    from {opacity: 0;transform: translate3d(15rem,0,0);}
+    to {opacity: 1;transform: translate3d(0,0,0);}
+}
+.fadeInRight {
+    @include animation(fadeInRight);
+}
+/* Flip */
+@include kyfrm(flip) {
+    from {transform: perspective(25rem) scale3d(1,1,1) rotate3d(1,1,0,-360deg);}
+    40% {transform: perspective(25rem) scale3d(1.5,1.5,1.5) rotate3d(0,1,0,-190deg)}
+    60% {transform: perspective(25rem) scale3d(1,1,1) rotate3d(1,1,0,0deg)}
+    80% {transform: perspective(25rem) scale3d(1.5,1.5,1.5) rotate3d(0,1,0,190deg)}
+    to {transform: perspective(25rem) scale3d(1, 1, 1) rotate3d(1,1,0, 360deg);}
+}
+.flip {
+    @include animation(flip);
+}
+/* Flip In*/
+@include kyfrm(flipIn) {
+    from {transform: perspective(25rem) scale3d(1,1,1) rotate3d(1,1,0,-360deg);opacity: 0;}
+    40% {transform: perspective(25rem) scale3d(1.5,1.5,1.5) rotate3d(0,1,0,-190deg)}
+    60% {transform: perspective(25rem) scale3d(1,1,1) rotate3d(1,1,0,0deg)}
+    80% {transform: perspective(25rem) scale3d(1.5,1.5,1.5) rotate3d(0,1,0,190deg)}
+    to {transform: perspective(25rem) scale3d(1, 1, 1) rotate3d(1,1,0, 360deg);opacity: 1;}
+}
+.flipIn {
+    @include animation(flipIn);
+}
+/* Flip  X*/
+@include kyfrm(flipX) {
+    from {transform: perspective(25rem) scale3d(1,1,1) rotate3d(0,1,0,-360deg);}
+    to {transform: perspective(25rem) scale3d(1,1,1) rotate3d(0,1,0, 360deg);}
+}
+.flipX {
+    @include animation(flipX);
+}
+/* Flip In X*/
+@include kyfrm(flipInX) {
+    from {transform: perspective(25rem) scale3d(1,1,1) rotate3d(0,1,0,-360deg);opacity: 0;}
+    to {transform: perspective(25rem) scale3d(1,1,1) rotate3d(0,1,0, 360deg);opacity: 1;}
+}
+.flipInX {
+    @include animation(flipInX);
+}
+/* Flip  Y*/
+@include kyfrm(flipY) {
+    from {transform: perspective(25rem) scale3d(1,1,1) rotate3d(1,0,0,-360deg);}
+    to {transform: perspective(25rem) scale3d(1,1,1) rotate3d(1,0,0, 360deg);}
+}
+.flipY {
+    @include animation(flipY);
+}
+/* Flip In Y*/
+@include kyfrm(flipInY) {
+    from {transform: perspective(25rem) scale3d(1,1,1) rotate3d(1,0,0,-360deg);opacity: 0;}
+    to {transform: perspective(25rem) scale3d(1,1,1) rotate3d(1,0,0, 360deg);opacity: 1;}
+}
+.flipInY {
+    @include animation(flipInY);
+}
+/* Rotate In */
+@include kyfrm(rotateIn) {
+    from {transform: rotate(-360deg);opacity: 0;}
+    to {transform: rotate(0deg);opacity: 1;}
+}
+.rotateIn {
+    @include animation(rotateIn);
+    transform-origin: center;
+}
+/* Rotate In LeftToRightDown*/
+@include kyfrm(rotateInLeftToRightDown) {
+    from {transform: rotate(-180deg);opacity: 0;}
+    to {transform: rotate(0deg);opacity: 1;}
+}
+.rotateInLeftToRightDown {
+    @include animation(rotateInLeftToRightDown);
+    transform-origin: left bottom;
+}
+/* Rotate In RightToLeftDown*/
+@include kyfrm(rotateInRightToLeftDown) {
+    from {transform: rotate(-180deg);opacity: 0;}
+    to {transform: rotate(0deg);opacity: 1;}
+}
+.rotateInRightToLeftDown {
+    @include animation(rotateInRightToLeftDown);
+    transform-origin: right bottom;
+}
+/* Rotate In LeftToRightUp*/
+@include kyfrm(rotateInLeftToRightUp) {
+    from {transform: rotate(-180deg);opacity: 0;}
+    to {transform: rotate(0deg);opacity: 1;}
+}
+.rotateInLeftToRightUp {
+    @include animation(rotateInLeftToRightUp);
+    transform-origin: right top;
+}
+/* Rotate In RightToLeftDown*/
+@include kyfrm(rotateInRightToLeftUp) {
+    from {transform: rotate(-180deg);opacity: 0;}
+    to {transform: rotate(0deg);opacity: 1;}
+}
+.rotateInRightToLeftUp {
+    @include animation(rotateInRightToLeftUp);
+    transform-origin: left top;
+}
+/* grow left to right*/
+@include kyfrm(growToRight) {
+    from {transform: scalex(0)}
+    to {transform: scaleX(1)}
+}
+.growToRight {
+    @include animation(growToRight);
+    transform-origin: left;
+}
+/*Button Down*/
+@include kyfrm(buttonDown) {
+    from {
+        transform: translateY(-50%) rotate(45deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(50%) rotate(45deg);
+        opacity: 0;
+    }
+}
+.buttonDown {
+    @include animation(buttonDown);
+    opacity: 0;
+}

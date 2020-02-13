@@ -1,0 +1,467 @@
+.logo {
+    fill: $white;
+    &-a {fill:$darkgreen;}
+    &-b {fill:$green;}
+    &-c {fill:$light;}
+    &_width {@include logoWidth(150px)}
+}
+.cover {
+    &_page, &_about, &_contact, &_work {
+        max-height: 1080px;
+        min-height: 800px;
+        height: 100vh;
+    }
+    &_page {
+        @include backgoundImage("domenico-loia-EhTcC9sYXsw-unsplash");
+    }
+    &_about {
+        @include backgoundImage('about/mia-baker-CuoMduHwRZY-unsplash');
+    }
+    &_contact {
+        @include backgoundImage('contact/programming-1873854_1920-Image-by-Boskampi-from-Pixabay');
+    }
+    &_exp {
+        @include backgoundImage('about/markus-spiske-xekxE_VR0Ec-unsplash');
+        h2 {
+            z-index: 2;
+            position: inherit;
+        }
+    }
+    &_avocado {
+        @include backgoundImage('work/smarteating/Depositphotos_5687938_original');
+    }
+    &_ekco {
+        @include backgoundImage('work/ekco/Ekco_POP');
+    }
+    > div {
+        position: relative;
+        z-index: 2;
+    }
+}
+.noGradient {
+    &::after {
+        content: none;
+    }
+}
+.btn {
+    &.btn {
+        &-hire {
+            background-color: $lightgreen;
+            color: $darkgreen;
+            padding: 20px 40px;
+            font-size: 1rem;
+            box-shadow: 0 6px 10px 0 $light;
+            border-radius: 10px;
+        }
+        &-down {
+            width: 33px;
+            height: 33px;
+            border-bottom: 2px solid $white;
+            border-right: 2px solid $white;
+            border-radius: 0;
+            transform: rotateZ(45deg);
+            position: relative;
+        }
+        &-line {
+            padding: 10px 20px;
+            border: 1px solid $white;
+            color: $white;
+        }
+    }    
+}
+.space {
+    &_white {
+        background-color: $white;
+        color: $green;
+        p {
+            @include spaceWhite(26px);
+        }
+        h3 {
+            @include spaceWhite(32px);
+            font-weight: 900;
+        }
+        .btn-hire {
+            padding: 10px 30px;
+            @media (min-width: 992px) and (min-device-width:1024px) and (orientation:landscape){
+                padding: 20px 40px;
+            }
+        }
+    }
+    &_videoBG {
+        position: relative;
+        height: 100vh;
+        max-height: 1080px;
+        min-height: 800px;
+        width: 100%;
+        overflow: hidden;
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+            transform: translate(-50%, -50%);
+            source {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: black;
+            opacity: .7;
+            z-index: -1;
+        }
+        .container-fluid {
+            .row {
+                #pd_name {
+                    @include spaceWhite(48.5px);
+                    font-family: 'Biko';
+                    margin-left: auto;
+                    @media (min-width:1200px) {
+                        margin-left: 2rem;
+                    }
+                }
+                .PD_logo {
+                    @include logoWidth(125px);
+                }
+            }
+        }
+    }
+}
+.line {
+    &-right {
+        @media (min-width:992px) {
+            border-right: 2px solid white ;
+            padding-right: 2rem;
+        }
+    }
+}
+.svg {
+    &_circle {fill: #0d0ec6;}
+    &_path {fill: $white;}
+    &_footer {fill: $lightgreen;}
+    &_path-footer {fill: $darkgreen;}
+}
+#foto {
+    object-fit: cover;
+    max-width: 350px;
+    width: 100%;
+    height: 50vh;
+}
+#CV {
+    margin: 5rem 0;
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 1rem;
+        #designer {
+            @media (min-width:992px) {
+                grid-row: span 2;
+            }
+            background-color: $white;
+            padding-top: 10px;
+            h2 {
+                color: $darkgreen;
+            }
+        }
+        #complement {
+            padding-top: 10px;
+            hr {
+                border: none;
+                border-bottom: 2px solid $white;
+                width: 75%;
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+        #objetive {
+            padding-left: 0;
+            @media (max-width:992px) {
+                grid-column: span 2;
+            }
+            div {
+                &:nth-child(1) {
+                    background-color: $white;
+                    color:$darkgreen;
+                    padding: 10px;
+                    display: inline-block;
+                }
+                &:nth-child(2) {
+                    margin: 0 10px;
+                }
+                &:nth-child(2),&:nth-child(3) {
+                    display: inline-block;
+                    color: $green;
+                }
+            }
+            p {
+                margin-top: 10px ;
+            }
+        }
+        #auxiliar {
+            grid-column: span 2;
+            h2 {
+                color: $light;
+            }
+        }
+    }
+}
+#education {
+    position: relative;
+    h3 {
+        @include spaceWhite(30px);
+        &:before {
+            @media (min-width:992px) {
+                content: '';
+                width: 10%;
+                display: inline-block;
+                border-bottom: 2px solid $white;
+                vertical-align: middle;
+                margin: 0 20px;
+            }
+        }
+    }
+    #info {
+        hr {
+            border: none;
+            border-bottom: 2px solid $white;
+            width: 25%;
+            padding: 0 15px;
+            margin: 2rem 15px;
+        }
+        p {
+            color: $green;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                display: inline-block;
+                width: 47.5%;
+                margin: 0.3rem;
+                vertical-align: middle;
+            }
+        }
+    }
+    .bg-img {
+        position: absolute;
+        bottom: 0%;
+        left: -10%;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        filter: blur(5px);
+        opacity: .5;
+        img {
+            object-fit: cover;
+            transform: translate(0%, -50%);
+        }
+    }
+}
+#skills {
+    h2 {
+        margin: auto;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 4rem;
+    }
+    .skill {
+        display: flex;
+        height: 35px;
+        overflow: hidden;
+        background-color: $lightgreen;
+        .skill-bar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            white-space: nowrap;
+            background-color: $light;
+            transform: scaleX(0);
+        }
+    }
+}
+#inspiration {
+    .radial {
+        border-radius: 100%;
+        overflow: hidden;
+    }
+    .quote {
+        font-size: .5rem;
+        color: $lightgreen;
+    }
+}
+#experence {
+    .present {
+        background-color: $light;
+        margin: 0;
+        padding: 1rem 2rem;
+        width: 100%;
+        text-align: center;
+        @media (min-width:997px) {
+            margin: 0 auto;
+            width: 150px;
+        }
+    }
+    li {
+        .line {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            border-bottom: 2px solid $white;
+            margin-bottom: 2rem;
+            text-align: center;
+            padding-bottom: 2rem;
+            width: auto;
+            img {
+                width: 60%;
+                height: auto;
+                max-height: 136px;
+                max-width: 210px;
+            }
+        }
+        h4 {
+            color: $lightgreen;
+            font-size: 2rem;
+            font-weight: 900;
+        }
+        time {
+            color: $light;
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+        
+    }
+}
+.f300 {
+    font-weight: 300;
+}
+.f900 {
+    font-weight: 900;
+}
+#portfolioWorks {
+    img {
+        max-height: 680px;
+    }
+    h3, h4 {
+        position: absolute;
+        @media (min-width:992px) {
+            left: 5%;
+            right: auto;
+        }
+        left: 0;
+        right: 0;
+    }
+    h3 {
+        @media (min-width:992px) {
+            bottom: 4.5rem;
+        }
+        bottom: 8.5rem;
+        font-weight: 300;
+    }
+    h4 {
+        @media (min-width:992px) {
+            bottom: 1.5rem;
+        }
+        bottom: 5.5rem;
+    }
+    .workBtn {
+        @media (min-width:992px) {
+            left: auto;
+            right: 5%;
+        }
+        right: 15%;
+        left: 15%;
+        bottom: 1.5rem;
+        position: absolute;
+    }
+    #wingu {
+        @media (min-width:992px) {
+            transform: translate(17%,0) scale(.8);
+        }
+        transform: translate(8%,-14%) scale(.5);
+    }
+    #smart {
+        @media (min-width:992px) {
+            transform: translate(5%,0) scale(.8);
+        }
+        transform: translate(2.5%,-14%) scale(.5);
+    }
+    #Ekco {
+        @media (min-width:992px) {
+            transform: translate(0,0) scale(.8);
+        }
+        transform: translate(0,-14%) scale(.5);
+    }
+}
+.bg {
+    &White {
+        background-color: $white;
+    }
+    &Gray {
+        background-color: #2A2C2E;
+    }
+}
+.image{
+    &Center {
+        position: relative;
+        min-height: 350px;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 25rem;
+            width: 50%;
+        }
+    }
+    &Left {
+        position: relative;
+        img {
+            max-width: 1280px;
+            width: 100%;
+            height: auto;
+            @media (min-width:1500px) {
+                margin-left: 10%;
+            }
+        }
+    }
+    &400 {
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+    }
+}
+.p {
+    &-auto {
+        padding: 15%;
+    }
+}
+.video_work {
+    display: block;
+    width: 100%; 
+    max-width: 1920px; 
+    margin: 0 auto; 
+}
+.table-desc {
+    div:nth-child(odd) {
+        color: $green;
+    }
+}
+.block-parallax {
+    position: relative;
+    img {
+        position: absolute;
+        transform: translate(-50%,0%);
+        z-index: 10;
+    }
+}

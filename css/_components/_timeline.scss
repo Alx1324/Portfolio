@@ -1,0 +1,102 @@
+$liSize: 10rem;
+.timeline {
+  overflow-x: hidden;
+  ul {
+    padding: 0;
+    li {
+      list-style-type: none;
+      position: relative;
+      width: 6px;
+      margin: 0 auto;
+      background: $light;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: $liSize;
+        height: $liSize;
+        border-radius: 50%;
+        background: inherit;
+      }
+      div {
+        position: relative;
+        bottom: 0;
+        width: 400px;
+        padding: 45px 15px;
+      }
+      &:nth-child(odd) {
+        div {
+          left: $liSize - 5;
+        }
+      }
+      &:nth-child(even) {
+        div {
+          left: -20rem - $liSize;
+        }
+      }
+      > img {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: $liSize - 2rem;
+        height: $liSize - 2rem;
+      }
+    }
+  }
+} 
+time {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.timeline {
+  ul {
+    li {
+      @media (max-width: 997px) {
+        margin-left: 50px;
+      }
+      &::after {
+        @media (max-width: 997px) {
+          width: $liSize / 1.5;
+          height: $liSize / 1.5;
+        }
+      }
+      div {
+        visibility: hidden;
+        opacity: 0;
+        transition: all .5s ease-in-out;
+        @media (max-width: 997px) {
+          width: 250px;
+        }
+        @media (max-width: 997px) {
+          width: calc(100vw - 160px);
+        }
+      }
+      &:nth-child(odd) div {
+        transform: translate3d(200px, 0, 0);
+      }
+      
+      &:nth-child(even) div {
+        transform: translate3d(-200px, 0, 0);
+        @media (max-width: 997px) {
+          left: -15rem - ($liSize / 2);
+        }
+        @media (max-width: 997px) {
+          left: $liSize / 2;
+        }
+      }
+    }
+  }
+}
+.timeline ul li.in-view div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
