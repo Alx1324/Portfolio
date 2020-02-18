@@ -105,7 +105,7 @@
         <section class="cover" id="skills">
             <div class="container">
                 <div class="row">
-                    <h2>APTITUDES AND SKILLS</h2>
+                    <h2 class="text-center text-md-left">APTITUDES AND SKILLS</h2>
                     <div class="col-12 col-md-6">
                         <span>Analytics</span>
                         <div class="skill my-3">
@@ -115,7 +115,7 @@
                     <div class="col-12 col-md-6">
                         <span>Organized</span>
                         <div class="skill my-3">
-                            <div class="skill-bar animated moreTime_5 delay_1 w_75" data-animation="growToRight"></div>
+                            <div class="skill-bar animated moreTime_5 delay_1 w_50" data-animation="growToRight"></div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
@@ -156,6 +156,7 @@
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">Adobe Creative Cloud</div>
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/html5.svg" class="img-fluid" alt="HTML5">
@@ -165,6 +166,7 @@
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">HTML 5</div>
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/css3.svg" class="img-fluid" alt="CSS3">
@@ -174,6 +176,7 @@
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">CSS 3</div>
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/js.svg" class="img-fluid" alt="Javascript">
@@ -183,6 +186,27 @@
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">Javascript</div>
+                    </div>
+                    <div class="col-4 col-md-3 my-5 wheel">
+                        <img src="assets/software/git.svg" class="img-fluid" alt="Git">
+                        <div class="wrapper animated" data-animation="value85">
+                            <div class="circle-wrapper" data-anim="base wrapper">
+                                <div class="circle" data-anim="base left"></div>
+                                <div class="circle" data-anim="base right"></div>
+                            </div>
+                        </div>
+                        <div class="info">Git</div>
+                    </div>
+                    <div class="col-4 col-md-3 my-5 wheel">
+                        <img src="assets/software/gitHub.svg" class="img-fluid" alt="GitHub">
+                        <div class="wrapper animated" data-animation="value75">
+                            <div class="circle-wrapper" data-anim="base wrapper">
+                                <div class="circle" data-anim="base left"></div>
+                                <div class="circle" data-anim="base right"></div>
+                            </div>
+                        </div>
+                        <div class="info">GitHub</div>
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/mailchimp.svg" class="img-fluid" alt="mailchimp">
@@ -192,6 +216,7 @@
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">Mail Chimp</div>
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/wordpress.svg" class="img-fluid" alt="Wordpress">
@@ -201,6 +226,7 @@
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">WordPress</div>
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/php.svg" class="img-fluid" alt="PHP">
@@ -210,6 +236,7 @@
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">PHP</div>
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/hubspot.svg" class="img-fluid" alt="Hubspot">
@@ -219,6 +246,7 @@
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">HubSpot</div>
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/responsys.svg" class="img-fluid" alt="Oracle Responsys">
@@ -228,15 +256,17 @@
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">Oracle Responsys</div>
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/ads.svg" class="img-fluid" alt="Google Ads">
-                        <div class="wrapper animated" data-animation="value75">
+                        <div class="wrapper animated" data-animation="value45">
                             <div class="circle-wrapper" data-anim="base wrapper">
                                 <div class="circle" data-anim="base left"></div>
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">Google Ads</div>
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/webDesign.svg" class="img-fluid" alt="Google Web Design">
@@ -246,6 +276,7 @@
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">Google Web Design</div>
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/analytics.svg" class="img-fluid" alt="Google Analytics">
@@ -255,6 +286,7 @@
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">Google Analytics</div>
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/blender.svg" class="img-fluid" alt="Blender">
@@ -264,6 +296,7 @@
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">Blender</div>
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/ni.svg" class="img-fluid" alt="Native Instruments">
@@ -273,6 +306,7 @@
                                 <div class="circle" data-anim="base right"></div>
                             </div>
                         </div>
+                        <div class="info">Native Instruments</div>
                     </div>
                 </div>
             </div>

@@ -2808,6 +2808,13 @@ footer i {
   position: relative;
 }
 
+.wheel .info {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+}
+
 .wrapper {
   position: absolute;
   top: 50%;
@@ -3260,6 +3267,12 @@ footer i {
   background: #3db39a;
 }
 
+@media (min-width: 997px) {
+  .timeline ul li {
+    max-height: 400px;
+  }
+}
+
 .timeline ul li::after {
   content: '';
   position: absolute;
@@ -3276,16 +3289,22 @@ footer i {
 .timeline ul li div {
   position: relative;
   bottom: 0;
-  width: 400px;
+  width: calc(100vw / 3);
   padding: 45px 15px;
 }
 
 .timeline ul li:nth-child(odd) div {
-  left: 5rem;
+  left: calc(100vw / 8);
+}
+
+@media (min-width: 997px) {
+  .timeline ul li:nth-child(odd) div {
+    left: calc(100vw / 12.5);
+  }
 }
 
 .timeline ul li:nth-child(even) div {
-  left: -30rem;
+  left: calc(-100vw / 2.5);
 }
 
 .timeline ul li > img {
@@ -3330,12 +3349,6 @@ time {
 
 @media (max-width: 997px) {
   .timeline ul li div {
-    width: 250px;
-  }
-}
-
-@media (max-width: 997px) {
-  .timeline ul li div {
     width: calc(100vw - 160px);
   }
 }
@@ -3352,13 +3365,7 @@ time {
 
 @media (max-width: 997px) {
   .timeline ul li:nth-child(even) div {
-    left: -20rem;
-  }
-}
-
-@media (max-width: 997px) {
-  .timeline ul li:nth-child(even) div {
-    left: 5rem;
+    left: calc(100vw / 8);
   }
 }
 

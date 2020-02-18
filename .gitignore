@@ -1,1 +1,6 @@
 /assets/*
+*.jpg
+*.png
+*.svg
+*.mp4
+*.webm

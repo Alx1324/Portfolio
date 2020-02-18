@@ -9,6 +9,9 @@ $liSize: 10rem;
       width: 6px;
       margin: 0 auto;
       background: $light;
+      @media (min-width:997px) {
+        max-height: 400px;
+      }
       &::after {
         content: '';
         position: absolute;
@@ -23,17 +26,20 @@ $liSize: 10rem;
       div {
         position: relative;
         bottom: 0;
-        width: 400px;
+        width: calc(100vw / 3);
         padding: 45px 15px;
       }
       &:nth-child(odd) {
         div {
-          left: $liSize - 5;
+          left: calc(100vw / 8);
+          @media (min-width:997px) {
+            left: calc(100vw / 12.5);
+          }
         }
       }
       &:nth-child(even) {
         div {
-          left: -20rem - $liSize;
+          left: calc(-100vw / 2.5);
         }
       }
       > img {
@@ -73,9 +79,6 @@ time {
         opacity: 0;
         transition: all .5s ease-in-out;
         @media (max-width: 997px) {
-          width: 250px;
-        }
-        @media (max-width: 997px) {
           width: calc(100vw - 160px);
         }
       }
@@ -86,10 +89,7 @@ time {
       &:nth-child(even) div {
         transform: translate3d(-200px, 0, 0);
         @media (max-width: 997px) {
-          left: -15rem - ($liSize / 2);
-        }
-        @media (max-width: 997px) {
-          left: $liSize / 2;
+          left: calc(100vw / 8);
         }
       }
     }

@@ -57,10 +57,10 @@
                         <img src="assets/software/js.svg" class="img-fluid" alt="Javascript">
                     </div>
                     <div class="col-4 col-md-3 my-5" data-300="opacity:0;" data-0-top="opacity:1;" data-anchor-target="#software">
-                        <img src="assets/software/mailchimp.svg" class="img-fluid" alt="mailchimp">
+                        <img src="assets/software/git.svg" class="img-fluid" alt="mailchimp">
                     </div>
                     <div class="col-4 col-md-3 my-5" data-350="opacity:0;" data-0-top="opacity:1;" data-anchor-target="#software">
-                        <img src="assets/software/wordpress.svg" class="img-fluid" alt="Wordpress">
+                        <img src="assets/software/gitHub.svg" class="img-fluid" alt="Wordpress">
                     </div>
                     <div class="col-4 col-md-3 my-5" data-400="opacity:0;" data-0-top="opacity:1;" data-anchor-target="#software">
                         <img src="assets/software/php.svg" class="img-fluid" alt="PHP">

@@ -12,7 +12,13 @@ $radial-animation-time-0: 2.15s;
 $radial-zindex-overlay: 20;
 $radial-zindex-circle: 10;
 .wheel {
-    position: relative;
+	position: relative;
+	.info {
+		position: absolute;
+		bottom: -50px;
+		left: 0;
+		right: 0;
+	}
 }
 .wrapper {
     position: absolute;

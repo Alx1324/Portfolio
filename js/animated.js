@@ -25,7 +25,7 @@ observer = new IntersectionObserver(entries => {
                 console.log('se activo');
             }, 500);
         } else {
-            console.log('no visible')
+            //console.log('no visible')
             //entry.target.classList.remove(animation);
         }
     });
