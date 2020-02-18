@@ -19,7 +19,7 @@
                     <div class="carousel-item active">
                         <div class="container">
                             <div class="row">
-                                <div class="col-12 text-center">
+                                <div class="col-12 text-center height350">
                                     <img src="assets/work/wingu/winguLogo.png" class="img-fluid" id="wingu" alt="Wingu Networks">
                                     <h3>ReBranding - Corporate Identity</h3>
                                     <h4>Wingu Networks - 2019</h4>
@@ -31,7 +31,7 @@
                     <div class="carousel-item">
                         <div class="container">
                             <div class="row">
-                                <div class="col-12 text-center">
+                                <div class="col-12 text-center height350">
                                     <img src="assets/work/smarteating/logoavocado@2x.png" class="img-fluid" id="smart" alt="Smart Eating">
                                     <h3>Brand - Corporate Identity</h3>
                                     <h4>Smart Eating - 2019</h4>
@@ -43,7 +43,7 @@
                     <div class="carousel-item">
                         <div class="container">
                             <div class="row">
-                                <div class="col-12 text-center">
+                                <div class="col-12 text-center height350">
                                     <img src="assets/work/ekco/logoekco@2x.jpg" class="img-fluid" id="Ekco" alt="EKCO Pregressive">
                                     <h3>Redesign Web Site</h3>
                                     <h4>Ekco Progressive - 2019</h4>
