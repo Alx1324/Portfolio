@@ -260,7 +260,7 @@
                     </div>
                     <div class="col-4 col-md-3 my-5 wheel">
                         <img src="assets/software/ads.svg" class="img-fluid" alt="Google Ads">
-                        <div class="wrapper animated" data-animation="value45">
+                        <div class="wrapper animated" data-animation="value50">
                             <div class="circle-wrapper" data-anim="base wrapper">
                                 <div class="circle" data-anim="base left"></div>
                                 <div class="circle" data-anim="base right"></div>
